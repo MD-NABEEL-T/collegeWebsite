@@ -17,12 +17,25 @@ seeMore.addEventListener("click", () => {
 });
 
 // Facilities reveal animation
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", () => {
   const facilities = document.querySelectorAll(".facility");
+
   facilities.forEach((facility) => {
+    const img = facility.querySelector(".slide-img");
+    const text = facility.querySelector(".facility-text");
     const rect = facility.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      facility.classList.add("show");
+
+    if (rect.top < window.innerHeight - 100 && !facility.classList.contains("animated")) {
+      facility.classList.add("animated");
+
+      // Start image animation
+      img.style.transform = "translateX(100%) rotate(360deg)";
+
+      // After image finishes animating, show text
+      setTimeout(() => {
+        text.style.opacity = "1";
+        text.style.transform = "translateY(0)";
+      }, 1000); // Matches CSS transition time of 1s
     }
   });
 });

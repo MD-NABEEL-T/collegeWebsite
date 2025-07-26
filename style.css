@@ -13,6 +13,7 @@ body{
     color: white;
     overflow-x: hidden;
 }
+
 #header{
     width:100vw;
     height:100vh;
@@ -85,11 +86,15 @@ nav ul li a:hover::after{
     top:40vh;
     left:45vw;
     font-size:15px;
-    color:#002855 ;
     background-color:#FFC107;
     opacity:0.7;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+}
+.official-link{
+    border-style: none;
+    color:#002855 ;
+    text-decoration: none;
 }
 
 .visit-link:hover{
@@ -97,6 +102,7 @@ nav ul li a:hover::after{
     transition:all 0.5s ease-in-out;
     transform: scale(1.1);
     opacity: 1;
+    color:black;
 }
 /* about */
 
@@ -241,32 +247,45 @@ nav ul li a:hover::after{
     position: relative;
 }
 
-.slide-img{
+.one,.two,.three{
+    position:relative;
+}
+/*.slide-img{
     width:200px;
     height:160px;
     border-radius: 1em;
     position:relative;
     margin:1em;
     transform: translateX(0) rotate(0deg);
-    transition: transform 1s ease-in-out;
-    z-index: 1;
+    transition: translate 1s ease-in-out,rotate 1s ease-in-out;
 
-}
-.one,.two,.three{
-    position:relative;
 }
 .facility-text{
     position:absolute;
     right:20vw;
     top:15vh;
-    opacity:0.5;
-}
-.show{
-    opacity:1;
-    transform: translateX(left="0px");
-    transform : rotate(360deg);
+    opacity:0;
+} */
+.slide-img {
+  width: 200px;
+  height: 160px;
+  border-radius: 1em;
+  position: relative;
+  margin: 1em;
+  transform: translateX(0) rotate(0deg);
+  transition: transform 1s ease-in-out;
 }
 
+.facility-text {
+  position: absolute;
+  right: 15vw;
+  top: 15vh;
+  opacity: 0;
+  transform: translateX(200%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* 
 .moreProjects {
   display: none;
 }
