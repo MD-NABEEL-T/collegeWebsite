@@ -30,6 +30,7 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbwV0kzBdoZU8OpiTB2dvt
       .catch(error => console.error('Error!', error.message))
   });
 
+let msg=document.querySelector("#msg");
 
 let moreProjects = document.querySelector(".moreProjects");
 moreProjects.style.display="none";
@@ -55,3 +56,12 @@ seeMore.addEventListener("click", () => {
 
   window.addEventListener('scroll', revealOnScroll);
   window.addEventListener('load', revealOnScroll);
+
+let submitbutton =document.querySelector("#submitbutton");
+submitbutton.addEventListener("click", () => {
+    submitbutton.style.backgroundColor = "white";
+    submitbutton.style.color = "black";
+    submitbutton.innerText = "Submitted";
+    msg.innerText="Thanks for the feedback";
+});
+
