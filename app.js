@@ -1,10 +1,18 @@
 openmenu = () => {
     sidemenu.style.right = "0";
+    document.querySelector(".visit-link").style.display = "none"; // hide button
+
 }
 closemenu = () => {
-    
+      document.querySelector(".visit-link").style.display = "block"; //show button
     sidemenu.style.right = "-200px";
 }
+// Close menu after clicking 
+document.querySelectorAll("#sidemenu li a").forEach(link => {
+  link.addEventListener("click", () => {
+    closemenu(); 
+  });
+});
 
 var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");

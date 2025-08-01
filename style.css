@@ -13,10 +13,13 @@ body{
     color: white;
     overflow-x: hidden;
 }
-
+/* close open */
+.fa-solid.fa-bars,.fa-solid.fa-xmark{
+    display:none;
+} 
 #header{
     width:100vw;
-    height:100vh;
+    min-height:100vh;
     background-image:url(collegephoto.png); 
     background-size:cover;
     background-position:right;
@@ -104,15 +107,13 @@ nav ul li a:hover::after{
     opacity: 1;
     color:black;
 }
-/* about */
 
-/* services */
 /* courses */
 #courses{
     background-color: #fff3b0;
     color:white;
-    width:100vw;
-    height: 100vh;
+    min-width:100vw;
+    min-height: 100vh;
     padding:10px;
     position:relative;
 }
@@ -130,8 +131,8 @@ nav ul li a:hover::after{
 
 .courses-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    gap: 3rem;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 3rem;
     margin-top:5rem;
     padding: 0 1rem;
 }
@@ -160,11 +161,6 @@ nav ul li a:hover::after{
     font-family: 'Roboto', sans-serif;
 
 }
-/* portfolio */
-
-/* #portfolio{
-     padding:50px 0;
-} */
 
 #campus{
     background-color: #e9edc9;
@@ -180,8 +176,8 @@ nav ul li a:hover::after{
 }
 .campus-list{
     display:grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    grid-gap:40px;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    grid-gap:3rem;
     /* margin-top: 50px; */
 }
 .campus-content{
@@ -417,21 +413,65 @@ form textarea {
 }
 
 /* Responsive for mobile */
-@media (max-width: 768px) {
-.fa-solid.fa-bars,.fa-solid.fa-xmark{
-    display:block;
-} 
-  .row {
-    flex-direction: column;
-  }
+@media only screen and (max-width:600px){
+    #header{
+        background-image: url(collegephoto.png);
+        background-size: cover;
+          background-position: center;
+  background-repeat: no-repeat;
+    }
+    .header-text{
+        margin-top: 150%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size:30px;
+    }
+    nav .fa-solid{
+        display:block;
+        font-size: 25px;
+    }
+    nav ul{
+        position:fixed;
+        background-color: #ff004f;
+        top:0;
+        right:-200px;
+        /* since width: 200px so this will be hidden */
+        width:200px;
+        height:100vh;
+        padding-top:50px;
+        z-index:2;
+        transition:right 0.5s;
+    }
+    nav ul li{
+        display:block;
+        margin:25px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left:25px;
+        cursor:pointer;
 
-  .contact-left,
-  .contact-right {
-    flex-basis: 100%;
-  }
+    }  
+    .visit-link{
+        position:absolute;
+        top:50vh;
+        left:35vw;
+    }  
 
+    .fa-solid.fa-bars,.fa-solid.fa-xmark{
+      display:block;
+    } 
+    .row {
+      flex-direction: column;
+    }
+
+    .contact-left,
+    .contact-right {
+      flex-basis: 100%;
+    }
+    .stickylogo{
+      display:none;
+    }
 }
-
-.fa-solid.fa-bars,.fa-solid.fa-xmark{
-    display:none;
-} 
